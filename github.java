@@ -105,7 +105,6 @@ public class github extends JFrame implements ActionListener {
                 curr = low_bound;
             }
             String this_date = printDate(dates.get(curr));
-            System.out.println(this_date);
             curr_date.setText(this_date);
             input="";
 
@@ -113,14 +112,7 @@ public class github extends JFrame implements ActionListener {
             curr_date.setText( "It took " + count + " tries!");
             Desktop d =Desktop.getDesktop();
             String number= String.valueOf(dates.get(curr));
-            System.out.println(number);
-            String html_date ="";
-            html_date += String.valueOf(number.charAt(4));
-            html_date += String.valueOf(number.charAt(5));
-            html_date += String.valueOf(number.charAt(6));
-            html_date += String.valueOf(number.charAt(7));
-            String file="https://apod.nasa.gov/apod/ap21"+html_date+".html";
-
+            String file = makeHtml(number);
             try {
                 d.browse(new URI(file));
             } catch (IOException e) {
@@ -129,6 +121,16 @@ public class github extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
         }
+    }
+
+    private String makeHtml(String number) {
+        String html_date ="";
+        html_date += String.valueOf(number.charAt(4));
+        html_date += String.valueOf(number.charAt(5));
+        html_date += String.valueOf(number.charAt(6));
+        html_date += String.valueOf(number.charAt(7));
+        String file="https://apod.nasa.gov/apod/ap21"+html_date+".html";
+        return file;
     }
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==after_button) {
