@@ -1,5 +1,5 @@
 public class github {
     public static void main(String[] args){
-        System.out.println("adasd");
+        System.out.println("wrote on github");
     }
 }
