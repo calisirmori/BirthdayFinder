@@ -12,7 +12,7 @@ import java.awt.Desktop;
 import java.net.URI;
 
 
-public class github extends JFrame implements ActionListener {
+public class birthdaySeach extends JFrame implements ActionListener {
 
     JButton before_button;
     JButton after_button;
@@ -31,7 +31,7 @@ public class github extends JFrame implements ActionListener {
     private static String BD = "Birthday";
 
 
-    public github(){
+    public birthdaySeach(){
         super();
         this.setSize(315,105);
         this.setBackground(Color.white);
@@ -93,7 +93,7 @@ public class github extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args){
-        hi Hi= new hi();
+        birthdaySeach start= new birthdaySeach();
     }
 
     public void paint(Graphics g){
